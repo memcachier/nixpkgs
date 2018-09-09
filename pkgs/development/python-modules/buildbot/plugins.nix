@@ -100,4 +100,24 @@
       license = licenses.gpl2;
     };
   };
+
+  badges = buildPythonPackage rec {
+    pname = "buildbot-badges";
+    inherit (buildbot-pkg) version;
+
+    src = fetchPypi {
+      inherit pname version;
+      sha256 = "0mx82ra2px5anfvn87qqb542k0b4j0xmw91201r5djvb5g0pibgi";
+    };
+
+    propagatedBuildInputs = [ buildbot-pkg ];
+    checkInputs = [ buildbot ];
+
+    meta = with lib; {
+      homepage = http://buildbot.net/;
+      description = "Buildbot Badges Plugin";
+      maintainers = with maintainers; [ nand0p ];
+      license = licenses.gpl2;
+    };
+  };
 }

@@ -1388,7 +1388,7 @@ in {
   buildbot-pkg = callPackage ../development/python-modules/buildbot/pkg.nix { };
   buildbot-plugins = pkgs.recurseIntoAttrs (callPackage ../development/python-modules/buildbot/plugins.nix { });
   buildbot-ui = self.buildbot.withPlugins (with self.buildbot-plugins; [ www ]);
-  buildbot-full = self.buildbot.withPlugins (with self.buildbot-plugins; [ www console-view waterfall-view grid-view wsgi-dashboards ]);
+  buildbot-full = self.buildbot.withPlugins (with self.buildbot-plugins; [ www console-view waterfall-view grid-view wsgi-dashboards badges ]);
 
   check-manifest = callPackage ../development/python-modules/check-manifest { };
 
