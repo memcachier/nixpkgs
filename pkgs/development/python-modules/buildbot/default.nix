@@ -1,6 +1,6 @@
 { stdenv, lib, buildPythonPackage, fetchPypi, makeWrapper, isPy3k,
   python, twisted, jinja2, zope_interface, future, sqlalchemy,
-  sqlalchemy_migrate, dateutil, txaio, autobahn, pyjwt, treq, txrequests,
+  sqlalchemy_migrate, dateutil, txaio, autobahn, pyjwt, cairosvg, klein, treq, txrequests,
   txgithub, pyjade, boto3, moto, mock, lz4, setuptoolsTrial, isort, pylint,
   flake8, buildbot-worker, buildbot-pkg, glibcLocales }:
 
@@ -46,6 +46,9 @@ let
 
       # tls
       twisted.extras.tls
+
+      cairosvg
+      klein
     ];
 
     checkInputs = [
