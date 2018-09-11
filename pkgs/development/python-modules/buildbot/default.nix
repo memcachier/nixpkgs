@@ -51,6 +51,7 @@ let
       cairosvg
       klein
       requests
+      treq
     ];
 
     checkInputs = [
